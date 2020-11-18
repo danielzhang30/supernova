@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+import { Typeahead } from 'react-bootstrap-typeahead';
+
 const SearchResultsDisplay = (props) => {
 
   const [activePage, setActivePage] = useState(0);
@@ -35,6 +37,7 @@ const SearchResultsDisplay = (props) => {
     )
   }
 
+  
   if (props.searchResult) {
     return (
       <div>
@@ -77,9 +80,12 @@ function App() {
       <Form className="SearchBar"
         onSubmit={handleSubmit}
       >
-        <Form.Control
-          placeholder="Enter your search here"
+        <Typeahead
+          id="basic-typeahead-single"
+          labelKey="name"
           onChange={(e)=>setSearchText(e.target.value)}
+          placeholder="Enter your search here"
+          options={["apple", "apple store",'amazon', 'apple stock', 'amazon delivery', 'best buy', 'bank of america', 'software', 'software engineering', "software architecture", "software architecture design","software system","software architecture class", "software architecture diagram", "software architecture pattern", "software architect", "software architecture books", "software architecture tools", "software architecture examples"]}
         />
       </Form>
       <SearchResultsDisplay searchResult={searchResults} itemsPerPage={10} />
