@@ -73,6 +73,7 @@ function App() {
 
   return (
     <div className="AppBox">
+      <h1>SuperNova Search Engine</h1>
       <Form className="SearchBar"
         onSubmit={handleSubmit}
       >
