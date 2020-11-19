@@ -32,7 +32,7 @@ const SearchResultsDisplay = (props) => {
     })
     return (
       pages.map(val=>{
-        return <div className="SearchResult">{val}</div>
+        return <div className="SearchResult"><a href={val}/></div>
       })
     )
   }
@@ -88,7 +88,7 @@ function App() {
           options={["apple", "apple store",'amazon', 'apple stock', 'amazon delivery', 'best buy', 'bank of america', 'software', 'software engineering', "software architecture", "software architecture design","software system","software architecture class", "software architecture diagram", "software architecture pattern", "software architect", "software architecture books", "software architecture tools", "software architecture examples"]}
         />
       </Form>
-      <a href={<SearchResultsDisplay searchResult={searchResults} itemsPerPage={10} />}></a>
+      <SearchResultsDisplay searchResult={searchResults} itemsPerPage={10} />}
     </div>
   );
 }
