@@ -1,0 +1,22 @@
+.AutoCompleteText {
+    width: 100%;
+    border: 1px solid grey;
+}
+
+.AutoCompleteText input {
+    width: 100%;
+    border: none;
+    padding: 10px 5px;
+    outline: none;
+}
+
+.AutoCompleteText ul {
+    list-style-type: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.AutoCompleteText li {
+    padding: 10px 5px;
+}

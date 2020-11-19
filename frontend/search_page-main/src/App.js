@@ -1,12 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import AutoCompleteText from './AutoCompleteText'
 import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-
-import { Typeahead } from 'react-bootstrap-typeahead';
 
 const SearchResultsDisplay = (props) => {
 
@@ -79,14 +78,9 @@ function App() {
       <h1>SuperNova Search Engine</h1>
       <Form className="SearchBar"
         onSubmit={handleSubmit}
+        onChange={(e) => setSearchText(e.target.value)}
       >
-        <Typeahead
-          id="basic-typeahead-single"
-          labelKey="name"
-          onChange={(e)=>setSearchText(e.target.value)}
-          placeholder="Enter your search here"
-          options={["apple", "apple store",'amazon', 'apple stock', 'amazon delivery', 'best buy', 'bank of america', 'software', 'software engineering', "software architecture", "software architecture design","software system","software architecture class", "software architecture diagram", "software architecture pattern", "software architect", "software architecture books", "software architecture tools", "software architecture examples"]}
-        />
+        <AutoCompleteText />
       </Form>
       <SearchResultsDisplay searchResult={searchResults} itemsPerPage={10} />
     </div>
