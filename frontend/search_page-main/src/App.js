@@ -31,7 +31,7 @@ const SearchResultsDisplay = (props) => {
     })
     return (
       pages.map(val=>{
-        return <div className="SearchResult"><a href={val}/>{val}</div>
+        return <div className="SearchResult"><a href={val}>{val}</a></div>
       })
     )
   }
